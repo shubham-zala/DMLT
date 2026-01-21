@@ -19,7 +19,7 @@ function App() {
       const result = await explainTopic(topic);
       setData(result);
     } catch (err) {
-      setError(err.error || "Something went wrong. Please try again.");
+      setError(err.error || err.message || JSON.stringify(err));
     } finally {
       setLoading(false);
     }
@@ -33,6 +33,10 @@ function App() {
       {error && (
         <div className="card" style={{ background: '#fef2f2', borderColor: '#fecaca', color: '#dc2626' }}>
           <strong>Error:</strong> {error}
+          {/* Debug helper: show raw error if it's not the string we expect */}
+          <div style={{ fontSize: '0.8em', marginTop: '5px', opacity: 0.8 }}>
+            (Technical details: {typeof error === 'string' ? '' : JSON.stringify(error) || 'Check console'})
+          </div>
         </div>
       )}
 
