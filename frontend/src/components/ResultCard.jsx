@@ -15,6 +15,22 @@ const ResultCard = ({ data }) => {
                 )}
             </div>
 
+            {/* Personalized Greeting */}
+            <div className="card greeting-card" style={{
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                color: 'white',
+                textAlign: 'center',
+                padding: '1.5rem',
+                marginBottom: '1.5rem'
+            }}>
+                <h2 style={{ margin: 0, fontSize: '1.5rem', fontWeight: '600' }}>
+                    Hello Rajviba Jadeja 👋
+                </h2>
+                <p style={{ margin: '0.5rem 0 0 0', opacity: 0.9, fontSize: '0.95rem' }}>
+                    Let's master this topic together!
+                </p>
+            </div>
+
             {/* Detailed Explanation */}
             <div className="card explanation-card">
                 <div className="card-header">
